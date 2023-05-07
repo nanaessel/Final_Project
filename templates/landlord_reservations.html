@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Reservations</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Tenant Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reservation in reservations %}
+                <tr>
+                    <td>{{ reservation.product.ProductName }}</td>
+                    <td>{{ reservation.ReceiverName }}</td>
+                    <td>{{ reservation.PhoneNumber }}</td>
+                    <td>{{ reservation.Address }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
